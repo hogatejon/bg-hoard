@@ -5,6 +5,7 @@ import { AppComponent, FormatRatingPipe } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
 import { StoreUiSharedModule } from '@bg-hoard/store/ui-shared';
 
 @NgModule({
@@ -29,6 +30,7 @@ import { StoreUiSharedModule } from '@bg-hoard/store/ui-shared';
     ),
     MatCardModule,
     StoreUiSharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
