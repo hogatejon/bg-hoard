@@ -22,7 +22,11 @@
               },
               {
                 "sourceTag": "type:feature",
-                "onlyDependOnLibsWithTags": ["type:feature", "type:ui", "type:util"]
+                "onlyDependOnLibsWithTags": [
+                  "type:feature",
+                  "type:ui",
+                  "type:util"
+                ]
               },
               {
                 "sourceTag": "type:ui",
@@ -31,14 +35,6 @@
               {
                 "sourceTag": "type:util",
                 "onlyDependOnLibsWithTags": ["type:util"]
-              },
-              {
-                "sourceTag": "scope:shared",
-                "onlyDependOnLibsWithTags": ["type:shared"]
-              },
-              {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
               }
             ]
           }

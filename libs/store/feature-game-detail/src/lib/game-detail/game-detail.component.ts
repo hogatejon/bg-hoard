@@ -8,14 +8,14 @@ import { Game } from '@bg-hoard/util-interface';
 @Component({
   selector: 'bg-hoard-game-detail',
   templateUrl: './game-detail.component.html',
-  styleUrls: ['./game-detail.component.css']
+  styleUrls: ['./game-detail.component.css'],
 })
 export class GameDetailComponent {
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   game$ = this.route.paramMap.pipe(
     map((params: ParamMap) => params.get('id')),
-    switchMap(id => this.http.get<Game>(`/api/games/${id}`))
+    switchMap((id) => this.http.get<any>(`/api/games/${id}`))
   );
   formatRating = formatRating;
 }

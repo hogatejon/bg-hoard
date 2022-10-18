@@ -1,23 +1,17 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, Pipe, PipeTransform } from '@angular/core';
+import { Component } from '@angular/core';
+import { getAllGames } from '../fake-api';
 import { formatRating } from '@bg-hoard/store/util-formatters';
+import { HttpClient } from '@angular/common/http';
 import { Game } from '@bg-hoard/util-interface';
 
 @Component({
   selector: 'bg-hoard-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private readonly http: HttpClient) { }
-
+  formatRating = formatRating;
   title = 'Board Game Hoard';
   games = this.http.get<Game[]>('/api/games');
-}
-
-@Pipe({ name: 'formatRating' })
-export class FormatRatingPipe implements PipeTransform {
-  transform(value: number) {
-    return formatRating(value);
-  }
+  constructor(private http: HttpClient) {}
 }
