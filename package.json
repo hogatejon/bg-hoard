@@ -8,6 +8,11 @@
     "test": "nx test",
     "prepare": "husky install"
   },
+  "nx": {
+    "implicitDependencies": {
+      ".github/workflows/ci.yml": "*"
+    }
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~14.2.0",
